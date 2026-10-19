@@ -38,7 +38,7 @@ class WatchTogetherScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<WatchTogetherProvider>(
       builder: (context, watchTogether, child) {
-        final canGoBack = watchTogether.isHost || !watchTogether.isInSession;
+        const canGoBack = true; // Local patch, see edde746/plezy#2747: guests may leave this screen without leaving the room.
         // The host owns sheet + system back: a back with the actions sheet open
         // closes it; otherwise the route pops only when [canGoBack] (a guest in
         // an active session can't leave). canGoBack==true also preserves the iOS
